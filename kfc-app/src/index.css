@@ -1,0 +1,9 @@
+#kfc-logo-check{
+    display: block;
+}
+
+@media all and (max-width:425px) {
+    #kfc-logo-check{
+        display: none;
+    }
+}
