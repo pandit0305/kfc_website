@@ -11,33 +11,12 @@ import {
   Center,
 } from "@chakra-ui/react";
 
-// import axios from "axios";
-// import { useState } from "react";
-// import { useEffect } from "react";
-// import Loading from "../../loading/Loading";
-
 export default function Launch() {
-  // const [loading, setLoading] = useState(false);
-  // const [launch, setLaunch] = useState([]);
-  // useEffect(() => {
-  //   setLoading(true);
-  //   axios({
-  //     url: "https://my-app-server.onrender.com/launch",
-  //     method: "GET",
-  //   })
-  //     .then((res) => {
-  //       setLoading(false);
-  //       setLaunch(res.data);
-  //     })
-  //     .catch((err) => {
-  //       setLoading(false);
-  //     });
-  // }, []);
   return (
     <>
-      <Box  h={"100px"} id="launch"></Box>
+      <Box h={"20px"} id="launch"></Box>
 
-      <Box mt={"70px"} borderRadius={"5px"}>
+      <Box mt={"10px"} borderRadius={"5px"}>
         <Spacer h={"100px"} />
         <Box>
           <Heading
@@ -50,20 +29,19 @@ export default function Launch() {
             NEW LAUNCH
           </Heading>
         </Box>
-        <Spacer h={"20px"} />
 
         {/* {loading && <Loading />} */}
 
         <Grid
-          templateColumns={{base:"repeat(2, 1fr)", sm:"repeat(2, 1fr)",md:"repeat(3,1fr)", lg:"repeat(3,1fr)"}}
-        columnGap={{ base: "-50px", sm: "-20px", md: "-20px", lg: "-5px" }}
-
+          templateColumns={{
+            lg: "repeat(3, 1fr)",
+            md: "repeat(2, 1fr)",
+            sm: "repeat(1, 1fr)",
+          }}
           rowGap="50px"
-          w={"865px"}
-          // border="1px solid red"
           mt={"20px"}
         >
-          {launch.map((ele) => (
+      {launch.map((ele) => (
             <GridItem
               ml="20px"
               w={"260px"}
@@ -98,13 +76,8 @@ export default function Launch() {
               >
                 {ele.price}
               </Heading>
-              <p style={{ width: "200px", marginLeft: "15px" }}>{ele.detail}</p>
-              <Box
-                m={"30px 0px 30px 0px"}
-                position="absolute"
-                bottom={"5px"}
-                left="30px"
-              >
+              <p style={{ width: "220px", marginLeft: "15px" }}>{ele.detail}</p>
+              <Box position="absolute" bottom={"25px"} left="30px">
                 <Center>
                   <CartButton ele={ele} />
                 </Center>

@@ -35,20 +35,22 @@ export default function MobileNavbar() {
       w="100%"
       zIndex={"1000"}
       bgColor={"white"}
-      boxShadow={"rgba(0,0,0,0.8)"}
-      top={"0"}
-      border={"1px solid red"}
+      top={"0px"}
+      left="0px"
+      right={"0px"}
+      // border={"1px solid red"}
+      boxShadow="red 0px -50px 36px -28px inset"
 
     >
-      <Box display={"flex"}> 
+      <Box display={"flex"}>  
         {temp}
         <Flex gap={"10px"} mt="30px" flexWrap={"wrap"} id="nav-item">
           <NavLink to={"/"}>
             <Img
               src={kfc}
               alt="logo_kfc"
-              w={{ base: "230px", sm: "200px", md: "200px", lg: "400px" }}
-              h={{ base: "60px", sm: "70px", md: "70px", lg: "80px" }}
+              w={"150px"}
+              h={"40px"}
               mt={"-5px"}
               borderRadius={"10px"}
               id="logo"
@@ -56,8 +58,10 @@ export default function MobileNavbar() {
           </NavLink>
           <NavLink to={"/menu"}>
             <Text
-              fontSize={{ base: "25px", md: "25px", lg: "40px" }}
+              fontSize={"17px"}
               fontWeight={"bold"}
+              marginLeft={"30px"}
+              color={"red"}
             >
               Menu
             </Text>

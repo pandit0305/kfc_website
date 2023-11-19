@@ -21,6 +21,7 @@ import {
   Table,
   Tr,
   Td,
+  Center,
 } from "@chakra-ui/react";
 import {
   AlertDialog,
@@ -75,13 +76,12 @@ export default function MobileCart() {
   };
   return (
     <>
-      {isMatch ? <MobileNavbar /> : <Navbar />}
-      <Box>
-        <Box maxWidth={"1102.12px"} m={"auto"} h={"auto"}>
-          <Spacer h={{ base: "180px", sm: "140px", lg: "140px" }} />
+      <Box mt={"170px"}>
+        <Box maxWidth={"1102.12px"} m={"auto"} h={"auto"}
+        
+        >
           <Sticker />
-
-          <Heading>MY CART</Heading>
+          <Heading marginLeft={"10px"}>MY CART</Heading>
           <Grid
             templateColumns={"repeat(1, 1fr)"}
             mt={"50px"}
@@ -91,19 +91,19 @@ export default function MobileCart() {
             <GridItem
               maxWidth={"500px"}
               borderRadius={"5px"}
-            //   border={"1px solid red"}
+              //   border={"1px solid red"}
             >
               {state.map((ele) => (
-                <Box
-                  bgColor={"#F8F7F5"}
-                  mb="20px"
-                //   border={"1px solid red"}
-                  mt="10p"
-                  h={"auto"}
-                  borderRadius={"10px"}
-                  maxWidth={"500px"}
-                >
-                  
+                <Center>
+                  <Box
+                    bgColor={"#F8F7F5"}
+                    mb="20px"
+                    //   border={"1px solid red"}
+                    mt="10p"
+                    h={"auto"}
+                    borderRadius={"10px"}
+                    maxWidth={"300px"}
+                  >
                     <Img
                       src={ele.image}
                       w={"auto"}
@@ -155,9 +155,10 @@ export default function MobileCart() {
                     >
                       <u>Remove</u>
                     </Text>
-              
-                  {/* calculator */}
-                </Box>
+
+                    {/* calculator */}
+                  </Box>
+                </Center>
               ))}
               <Flex justifyContent={"space-between"}>
                 <Text
@@ -167,6 +168,7 @@ export default function MobileCart() {
                   fontWeight={"bold"}
                   cursor={"pointer"}
                   w={"90px"}
+                  ml="10px"
                   onClick={onOpen}
                 >
                   <u>Remove All</u>
@@ -229,6 +231,7 @@ export default function MobileCart() {
                     fontSize={"14px"}
                     pl={"40px"}
                     pr={"40px"}
+                    mr="10px"
                     _hover={{ bgColor: "black", color: "white" }}
                   >
                     Add More Menu

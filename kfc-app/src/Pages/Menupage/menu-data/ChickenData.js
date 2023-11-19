@@ -98,7 +98,7 @@ export const chicken = [
     {
       "quantity":1,
       "id":140,
-    "name":"Friendship Bucket with Nashville Sauce",
+    "name":"Friendship Bucket",
     "detail":"3pc Hot & Crispy, 3 Wings, 3 Strips, Large Popcorn & our new Nashville Bottle",
     "price":879.05,
     "image":"https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/lg/D-PR00002173.jpg?ver=20.85"

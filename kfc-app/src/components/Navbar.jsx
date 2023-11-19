@@ -6,20 +6,9 @@ import { Icon } from "@iconify/react";
 import { AuthContext } from "../context/authcontext/AuthContext";
 import MyAccount from "./MyAccount";
 // import { useMediaQuery } from "@chakra-ui/react";
-import kfc from './kfc.jpg';
+import kfc from "./kfc.jpg";
 
-import {
-  Modal,
-  Img,
-  Text,
-  Spacer,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalBody,
-  ModalCloseButton,
-  useDisclosure,
-} from "@chakra-ui/react";
+import { Img, Text, useDisclosure } from "@chakra-ui/react";
 
 const links = [
   { path: "/career", title: "Careers" },
@@ -61,15 +50,15 @@ export default function Navbar() {
       bgColor={"white"}
       height="auto"
       id="navbar"
-      boxShadow={"rgba(0,0,0,0.8)"}
       top={"0"}
+      boxShadow="red 0px -50px 36px -28px inset"
     >
       <Box
-        display={{ base: "flex", md: "block", lg:"flex"}}
+        display={{ base: "flex", lg: "flex" }}
         justifyContent={"space-between"}
-        position={"relative"}
-        ml={{md:"20px",lg:"auto"}}
-        w="1103.12px"
+        // position={"relative"}
+        ml={{ md: "20px", lg: "auto" }}
+        w="90%"
         h={"auto"}
         m={"auto"}
         mb="15px"
@@ -80,7 +69,7 @@ export default function Navbar() {
           <Box
             display="flex"
             maxWidth={"700px"}
-            gap={"50px"}
+            gap={"10px"}
             mt="30px"
             flexWrap={"wrap"}
             id="nav-item"
@@ -89,8 +78,8 @@ export default function Navbar() {
               <Img
                 src={kfc}
                 alt="logo_kfc"
-                w={"180px"}
-                h={"45px"}
+                w={"150px"}
+                h={"40px"}
                 mt={"-5px"}
                 borderRadius={"10px"}
                 id="logo"
@@ -98,9 +87,11 @@ export default function Navbar() {
             </NavLink>
             <NavLink to={"/menu"}>
               <Text
-                fontSize={{ base: "14px" }}
+                fontSize={{ base: "16px" }}
                 fontWeight={"bold"}
                 id="menufont"
+                color={"red"}
+                marginLeft={"30px"}
               >
                 Menu
               </Text>
@@ -111,19 +102,19 @@ export default function Navbar() {
                 id="nav-map"
                 key={ele.path}
                 to={ele.path}
-                style={{ fontWeight: "bold", fontSize: "14px" }}
+                style={{ fontWeight: "bold", fontSize: "16px" }}
               >
                 {ele.title}
               </NavLink>
             ))}
-            <NavLink
+            {/* <NavLink
               id="nav-map"
               to={"/find_kfc"}
               style={{ fontWeight: "bold", fontSize: "14px" }}
             >
               {find}
               <ExternalLinkIcon fontSize={"13px"} mb="3px" ml="3px" />
-            </NavLink>
+            </NavLink> */}
           </Box>
         </Box>
         <Box>
@@ -149,86 +140,6 @@ export default function Navbar() {
               </Button>
             </NavLink>
           </Flex>
-        </Box>
-      </Box>
-      <Box
-        position={"fixed"}
-        w="100%"
-        zIndex={"-1"}
-        bgColor={"#202124"}
-        _hover={{ background: "rgba(0, 0, 0, 0.9)" }}
-        id="start-order"
-      >
-        <Box>
-          <Box onClick={onOpen} w={"100%"} h="40px" id="pick-up">
-            <Center mt={"0px"} cursor="pointer">
-              <Text mt={"10px"}>
-                <Icon
-                  icon="carbon:location-filled"
-                  color="red"
-                  fontSize={"20px"}
-                />
-              </Text>
-              <Text color={"white"} ml="5px" mt={"5px"} fontSize={"16px"}>
-                Start an Order for Pickup or Delivery
-              </Text>
-            </Center>
-          </Box>
-          <Modal isOpen={isOpen} onClose={onClose}>
-            <ModalOverlay />
-            <ModalContent maxW={{ base: "980px" }} id="modal-body">
-              <ModalHeader fontWeight={"bold"}>
-                <Center>START YOUR ORDER</Center>
-              </ModalHeader>
-              <ModalCloseButton />
-              <ModalBody
-                backgroundColor="lightgray"
-                borderBottomRadius={"10px"}
-              >
-                <Center
-                  w={"350px"}
-                  m="auto"
-                  textAlign={"center"}
-                  fontSize="25px"
-                  fontWeight={"bold"}
-                >
-                  LET'S GET STARTED. WOULD YOU LIKE PICKUP OR DELIVERY?
-                </Center>
-                <Spacer h={"15px"} />
-                <Center>
-                  <Text>
-                    Menu availability and pricing may vary between order types.
-                  </Text>
-                </Center>
-                <Spacer h={"15px"} />
-                <Grid
-                  templateColumns={"repeat(2, 1fr)"}
-                  ml={{ base: "200px", sm: "150px", lg: "200px" }}
-                >
-                  <GridItem colSpan={1}>
-                    <Button
-                      borderRadius={"30px"}
-                      border="1px solid black"
-                      p={"30px 40px 30px 40px"}
-                      fontWeight="bold"
-                    >
-                      QUICK PICK-UP
-                    </Button>
-                  </GridItem>
-                  <GridItem colSpan={{ base: 1, md: 2, sm: 2, lg: 1 }}>
-                    <Button
-                      borderRadius={"30px"}
-                      border="1px solid black"
-                      p={"30px 40px 30px 40px"}
-                      fontWeight="bold"
-                    >
-                      DELIVERY
-                    </Button>
-                  </GridItem>
-                </Grid>
-              </ModalBody>
-            </ModalContent>
-          </Modal>
         </Box>
       </Box>
     </Box>

@@ -1,10 +1,22 @@
 import { HashLink } from "react-router-hash-link";
-import { Box, Text } from "@chakra-ui/react";
+import { Box, Text,Heading,useMediaQuery } from "@chakra-ui/react";
 
 export const MenuSideBar = () => {
+  const [isMatch] = useMediaQuery("(max-width: 768px)");
+
   return (
     <>
-      <Box mt = {"100px"} ml={{base:"15px",sm:"50px", md:"20px", lg:"0px"}} position={"fixed"} id="menu-box">
+      <Box position={"fixed"} id="menu-box">
+        <Box>
+        <Heading
+              style={{ fontStretch: "condensed" }}
+              fontSize={"35px"}
+              
+              display={isMatch ? "none" : "block"}
+            >
+              KFC
+            </Heading>{" "}
+        </Box>
         <Box
           w={{md:"220px", lg:"250px"}}
           h={"649px"}

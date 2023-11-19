@@ -1,14 +1,13 @@
 import React from "react";
 import { CartContext } from "../context/cartcontext/CartContext";
 import AddButton from "./addtocart/AddButton";
-import Navbar from "../components/Navbar";
-// import MobileNavbar from "../components/MobileNavbar";
+// import Navbar from "../components/Navbar";
 import Sticker from "../components/Home_section/Sticker";
 import { useMediaQuery } from "@chakra-ui/react";
 
 import { removeFromCart, removeAll } from "../context/cartcontext/action";
 import { useNavigate, NavLink } from "react-router-dom";
-import  MobileCart  from "./MobileCart";
+import MobileCart from "./MobileCart";
 import {
   Box,
   Img,
@@ -40,7 +39,7 @@ export default function Cart() {
   const { state, dispatch } = React.useContext(CartContext);
   const [value, setValue] = useState(false);
   const navigate = useNavigate();
-  const [isMatch] = useMediaQuery("(max-width: 600px)");
+  const [isMatch] = useMediaQuery("(max-width: 768px)");
 
   const RemoveAllItem = () => {
     dispatch(removeAll());
@@ -75,14 +74,10 @@ export default function Cart() {
     navigate("/cart/checkout");
   };
 
-
-  const cart=(<Box>
-    <Navbar />
+  const cart = (
     <Box>
-      <Box w={"1102.12px"} m={"auto"} h={"auto"}>
-        <Spacer h={{ base: "180px", sm: "140px", lg: "140px" }} />
+      <Box w={"90%"} m={"auto"} h={"auto"} mt={{lg:"130px", md:"190px"}}>
         <Sticker />
-
         <Heading>MY CART</Heading>
         <Grid
           templateColumns={{
@@ -183,7 +178,6 @@ export default function Cart() {
                 <AlertDialogOverlay />
 
                 <AlertDialogContent maxW={"550px"} h={"250px"}>
-                  {/* <AlertDialogHeader>Discard Changes?</AlertDialogHeader> */}
                   <AlertDialogCloseButton />
                   <AlertDialogBody mt={"50px"} textAlign={"center"}>
                     <Heading
@@ -245,17 +239,9 @@ export default function Cart() {
             borderRadius={"10px"}
           >
             <Box w={"300px"} m={"auto"}>
-              <Flex
-                mt={"30px"}
-                justifyContent={"space-between"}
-                width={"80px"}
-              >
+              <Flex mt={"30px"} justifyContent={"space-between"} width={"80px"}>
                 <Heading fontSize={"24px"}>{sum}</Heading>
-                <Heading
-                  letterSpacing={"-3px"}
-                  fontSize={"24px"}
-                  ml={"10px"}
-                >
+                <Heading letterSpacing={"-3px"} fontSize={"24px"} ml={"10px"}>
                   ITEMS
                 </Heading>
               </Flex>
@@ -366,12 +352,6 @@ export default function Cart() {
         <Footer />
       </Box>
     </Box>
-  </Box>);
-  return (
-    <>
-      {
-        isMatch ? (<MobileCart/>) :(cart)
-      }
-    </>
   );
+  return <>{isMatch ? <MobileCart /> : cart}</>;
 }

@@ -38,8 +38,8 @@ export default function Biryani() {
 
   return (
     <>
-      <Box id="biryani" h={"100px"}></Box>
-      <Box mt={"70px"} borderRadius={"5px"}>
+      <Box id="biryani" h={"20px"}></Box>
+      <Box mt={"10px"} borderRadius={"5px"}>
         <Spacer h={"100px"} />
         <Box>
           <Heading
@@ -52,19 +52,18 @@ export default function Biryani() {
             BIRYANI BUCKETS
           </Heading>
         </Box>
-        <Spacer h={"20px"} />
+
         {/* {loading && <Loading/>} */}
         <Grid
           templateColumns={{
-            base: "repeat(2, 1fr)",
-            sm: "repeat(2, 1fr)",
-            md: "repeat(3,1fr)",
-            lg: "repeat(3,1fr)",
+            lg: "repeat(3, 1fr)",
+            md: "repeat(2, 1fr)",
+            sm: "repeat(1, 1fr)",
           }}
-        columnGap={{ base: "-50px", sm: "-20px", md: "-20px", lg: "-5px" }}
+          // columnGap={{ base: "-50px", sm: "-20px", md: "-20px", lg: "-5px" }}
 
           rowGap="50px"
-          w={"865px"}
+          width={{ lg: "100%", md: "75%", sm: "30%" }}
           // border="1px solid red"
           mt={"20px"}
         >

@@ -1,7 +1,6 @@
 import Home from "../components/Home";
 import Login from "../components/Login";
 import Menu from "../Pages/Menu";
-import MobileMenu from "../Pages/MobileMenu";
 import About from '../Pages/About';
 import Career from '../Pages/Career';
 import Findkfc from '../Pages/Findkfc';
@@ -9,8 +8,7 @@ import Startorder from "../Pages/Startorder";
 import Cart from "../Pages/Cart";
 import Checkout from '../Pages/Checkout';
 import {Routes, Route} from 'react-router-dom';
-// import SmallMobileMenu from "../Pages/SmallMobileMenu";
-// import MobileCart from '../Pages/MobileCart';
+
 export default function AllRouters(){
     return (
         <>

@@ -47,48 +47,8 @@ export default function Checkout() {
     navigate("/cart");
   };
   return (
-    <>
-      <Box w={"100%"} h={"100px"} boxShadow={"lg"} position={"sticky"}>
-        <Box w={"100%"} 
-        >
-          <Button
-            position={"absolute"}
-            w={"158px"}
-            h={"44px"}
-            border={"1px solid black"}
-            _hover={{ bgColor: "black", color: "white" }}
-            borderRadius={"30px"}
-            top={"25px"}
-            onClick={BacktoCart}
-          >
-            Back to Cart
-          </Button>
-          <Center>
-            <Img
-            id="kfc-logo-check"
-              src={"https://online.kfc.co.in/static/media/kfcLogo.492728c6.svg"}
-              alt="logo"
-              position={"absolute"}
-              top={"30px"}
-              h={"23px"}
-              w={"76px"}
-            />
-          </Center>
-          <Box>
-            <Text
-              position={"absolute"}
-              right={"50px"}
-              top={"30px"}
-              fontSize={"16px"}
-              fontWeight={"bold"}
-            >
-              <QuestionOutlineIcon /> Need Help?
-            </Text>
-          </Box>
-        </Box>
-      </Box>
-
-      <Box w={"300px"} m={"auto"} position={"absolute"} left={"10px"}>
+    <Box mt={{lg:"150px", md:"200px", sx:"250px"}}>
+      <Box w={"300px"} m={"auto"} marginTop={"150px"}>
         <Flex mt={"30px"} justifyContent={"space-between"} width={"80px"}>
           <Heading fontSize={"24px"}>{sum}</Heading>
           <Heading letterSpacing={"-3px"} fontSize={"24px"} ml={"10px"}>
@@ -181,6 +141,6 @@ export default function Checkout() {
           </Flex>
         </Box>
       </Box>
-    </>
+    </Box>
   );
 }

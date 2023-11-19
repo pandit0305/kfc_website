@@ -8,8 +8,8 @@ export default function Footer() {
 
 
   return (
-    <Box bgColor="#202124" maxWidth={"100%"} height={"auto"}>
-      <Spacer h={"180px"} />
+    <Box bgColor="#202124" width={"100%"} height={"auto"}>
+      <Spacer h={"120px"} />
       <Box
         display={"flex"}
         maxWidth={"100%"}

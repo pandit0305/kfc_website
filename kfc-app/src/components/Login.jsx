@@ -287,7 +287,7 @@ export default function Login() {
   const display = !show ? sendform : otpform;
 
   return (
-    <Box h={"1000px"}>
+    <Box h={"1000px"} mt="100px">
       <Spacer h={"50px"} />
       <Container>
         <Center mt={"20px"}>

@@ -3,7 +3,7 @@ import { CartContext } from "../../context/cartcontext/CartContext";
 import { addToCart } from "../../context/cartcontext/action";
 import { Img, Button } from "@chakra-ui/react";
 
-export default function CartButton({ ele,id }) {
+export default function CartButton({ ele}) {
   const { dispatch } = React.useContext(CartContext);
 
   return (
